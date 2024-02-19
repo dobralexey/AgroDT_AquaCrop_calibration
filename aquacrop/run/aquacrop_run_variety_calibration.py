@@ -234,7 +234,7 @@ def aquacrop_run_variety_calibration(project_name_base,
             create_aquacrop_project_list(aquacrop_project_file_folder=aquacrop_project_file_folder,
                                          project_list=project_list)
 
-            aquacrop_exe_path = os.path.join(aquacrop_project_folder, 'aquacrop')
+            aquacrop_exe_path = os.path.join(aquacrop_project_folder, 'aquacrop.exe')
 
             subprocess.call(aquacrop_exe_path)
 

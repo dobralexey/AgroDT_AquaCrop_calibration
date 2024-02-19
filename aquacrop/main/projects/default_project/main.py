@@ -3,7 +3,7 @@ import pandas as pd
 from aquacrop.run.aquacrop_run_variety_calibration import aquacrop_run_variety_calibration
 
 #----USER DEFINED PARAMETERS----
-aquacrop_all_projects_folder = '/home/aleksei/Programs/AgroDT_AquaCrop_calibration/aquacrop/main/projects/'
+aquacrop_all_projects_folder = 'C:/Users/user/PycharmProjects/AgroDT_AquaCrop_calibration/aquacrop/main/projects/'
 project_name_base = 'default_project'
 
 latitude = 59.425032                                                               #Latitude in degrees (from -90 to 90)
