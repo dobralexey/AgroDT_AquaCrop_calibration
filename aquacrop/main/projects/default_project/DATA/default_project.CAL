@@ -1,0 +1,8 @@
+default_project
+         7.1  : AquaCrop Version (August 2023)
+         0    : The onset of the growing period is fixed on a specific date
+        -9    : Day-number (1 ... 366) of the Start of the time window for the onset criterion: Not applicable
+        -9    : Length (days) of the time window for the onset criterion: Not applicable
+       122    : Day-number (1 ... 366) for the onset of the growing period
+        -9    : Number of successive days: Not applicable
+        -9    : Number of occurrences: Not applicable
