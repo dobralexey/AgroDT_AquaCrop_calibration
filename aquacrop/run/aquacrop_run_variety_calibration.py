@@ -39,7 +39,8 @@ def aquacrop_run_variety_calibration(project_name_base,
                                    swo_dfs,
                                    gwt_depth,
                                    gwt_ec,
-                                   N=8):
+                                   N=8,
+                                   fertility_stress_calibration=False):
 
     '''
     :param project_name_base: Base project name for calibration
@@ -280,6 +281,18 @@ def aquacrop_run_variety_calibration(project_name_base,
     best_error = str(df_errors_gr['error'].min())
 
     crop_parameters_result = dict(zip(names, best_param_values_round))
+    if fertility_stress_calibration:
+        crop_file_calibrated = modify_aquacrop_crop_file(project_name='fertility_stress',
+                                                         crop_parameters_dict_new=crop_parameters_result,
+                                                         crop_file_folder=aquacrop_crops_folder,
+                                                         crop_ref_folder=aquacrop_crops_folder,
+                                                         crop_ref=crop_ref)
+    else:
+        crop_file_calibrated = modify_aquacrop_crop_file(project_name=project_name_base,
+                                  crop_parameters_dict_new=crop_parameters_result,
+                                  crop_file_folder=aquacrop_crops_folder,
+                                  crop_ref_folder=aquacrop_crops_folder,
+                                  crop_ref=crop_ref)
 
-    return crop_parameters_result, best_error
+    return crop_parameters_result, best_error, crop_file_calibrated
 

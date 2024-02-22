@@ -1,1 +1,1 @@
-default_project_2014_55.PRO
+default_project.PRO

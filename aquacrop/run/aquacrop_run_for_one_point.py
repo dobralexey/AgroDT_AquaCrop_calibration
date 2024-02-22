@@ -168,12 +168,14 @@ def aquacrop_run_for_one_point(project_name,
                                  project_list=project_list)
     #RUN AQUACROP
 
-    aquacrop_exe_path = os.path.join(aquacrop_project_folder, 'aquacrop')
+    aquacrop_exe_path = os.path.join(aquacrop_project_folder, 'aquacrop.exe')
 
     subprocess.call(aquacrop_exe_path)
 
     #CREATE CSV OUT FILE AND DARAFRAME
-    aquacrop_daily_out_to_csv_df(aquacrop_project_out_file_folder=aquacrop_project_out_file_folder,
+    daily_out_file, season_out_file, df = aquacrop_daily_out_to_csv_df(aquacrop_project_out_file_folder=aquacrop_project_out_file_folder,
                                  aquacrop_project_out_csvfile_folder=aquacrop_project_results_folder,
                                  project_name=project_name,
-                                 csv_write=True)
+                                 csv_write=False)
+
+    return df

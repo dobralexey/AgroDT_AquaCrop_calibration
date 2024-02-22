@@ -461,7 +461,7 @@ def aquacrop_daily_out_to_csv_df(aquacrop_project_out_file_folder, aquacrop_proj
     daily_out_file_path = os.path.join(aquacrop_project_out_file_folder, daily_out_file)
 
     df = pd.read_fwf(daily_out_file_path, skiprows=[0, 1, 3])
-    df = df.loc[:, ~df.columns.str.replace("(\.\d+)$", "").duplicated()]
+    #df = df.loc[:, ~df.columns.str.replace("(\.\d+)$", "").duplicated()]
     if csv_write:
         daily_csv_file = f'{project_name}PROday.csv'
         daily_csv_file_path = os.path.join(aquacrop_project_out_csvfile_folder, daily_csv_file)
